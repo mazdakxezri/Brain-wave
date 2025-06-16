@@ -24,7 +24,6 @@ const Header = () => {
 
   const handleClick = () => {
     if (!openNavigation) return;
-
     enablePageScroll();
     setOpenNavigation(false);
   };
@@ -36,8 +35,8 @@ const Header = () => {
       }`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <a href="#hero" className="block w-[12rem] xl:mr-8">
-          <img src={brainwave} alt="Brainwave" width={190} height={40} />
+        <a href="#hero" className="block w-[8rem] sm:w-[10rem] xl:w-[12rem] xl:mr-8">
+          <img src={brainwave} alt="Brainwave" className="w-full h-auto" />
         </a>
 
         <nav
@@ -51,9 +50,9 @@ const Header = () => {
                 key={item.id}
                 href={item.url}
                 onClick={handleClick}
-                className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
+                className={`block relative font-code text-xl sm:text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
                   item.onlyMobile ? "lg:hidden" : ""
-                } px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
+                } px-4 sm:px-6 py-4 sm:py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold ${
                   item.url === pathname.hash
                     ? "z-2 lg:text-n-1"
                     : "lg:text-n-1/50"
